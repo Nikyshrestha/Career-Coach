@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Career Coach</title>
+        <link rel="stylesheet" href="./assets/css/index.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet" />
+        <script>
+            function toggleSidebar(ref) {
+                document.getElementById("sidebar").classList.toggle("active");
+            }
+
+            function toggleSound(action) {
+                if (action === "mute") {
+                    document.getElementById("mute").classList.add("active");
+                    document.getElementById("unmute").classList.remove("active");
+                } else {
+                    document.getElementById("mute").classList.remove("active");
+                    document.getElementById("unmute").classList.add("active");
+                }
+            }
+
+            function toogleLHM(action) {
+                if (action === "lhm") {
+                    document.getElementById("lhm").classList.add("active");
+                    document.getElementById("rhm").classList.remove("active");
+                } else {
+                    document.getElementById("lhm").classList.remove("active");
+                    document.getElementById("rhm").classList.add("active");
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            <div class="left">
+                <div class="toggle-btn" onclick="toggleSidebar(this)">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="logo">
+                    <img src="./assets/images/logo/logo.png" alt="Career Coach logo" />
+                </div>
+            </div>
+
+            <div class="right"></div>
+        </header>
+        <section>
+            <div class="sidebar" id="sidebar">
+                <nav class="sidenav">
+                    <ul>
+                        <li><a href="">My Statistics</a></li>
+                        <li id="lhm" class="hidemode active" title="Enable Left hand mode" onclick="toogleLHM('rhm')">
+                            <a href="javascript:;"> Enable Left hand mode </a>
+                        </li>
+                        <li id="rhm" class="hidemode" title="Disable Left hand mode" onclick="toogleLHM('lhm')">
+                            <a href="javascript:;"> Disable Left hand mode </a>
+                        </li>
+                        <li id="unmute" class="hidemode active" title="Sound on" onclick="toggleSound('mute')">
+                            <a href="javascript:;">
+                                Disable Sounds
+                                <div class="icon"><img src="./assets/images/icons/mute.svg" alt="Sound off" /></div>
+                            </a>
+                        </li>
+                        <li id="mute" class="hidemode" title="Mute" onclick="toggleSound('unmute')">
+                            <a href="javascript:;">
+                                Enable Sounds
+                                <div class="icon">
+                                    <img src="./assets/images/icons/volume.svg" alt="Sound On" />
+                                </div>
+                            </a>
+                        </li>
+                        <li><a href="">Payment</a></li>
+                        <li><a href="">Reports</a></li>
+                    </ul>
+                </nav>
+
+                <div class="sidebar-footer">©Copyright 2020 Career Coach, All Rights Reserved</div>
+            </div>
+        </section>
+    </body>
+</html>
